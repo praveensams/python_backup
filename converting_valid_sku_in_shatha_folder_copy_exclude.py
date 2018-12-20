@@ -5,7 +5,7 @@ from subprocess import *
 x=0
 
 d={}
-valid_keys=open("valid_skus_in_shatha_folder.txt","r").readlines()
+valid_keys=open("valid_skus_in_shatha_folder_new.txt","r").readlines()
 
 for i in valid_keys:
     s=search(r'\/(\d+)\_(\d+)(\.)',i)
@@ -17,6 +17,7 @@ for i in valid_keys:
     s1=search(r'\/(\d+)\_(\d+)(\.)(\w+)',i)
     if s1:
         if s1.group(1) in d.keys():
+            print("Matching lists -->  " + s1.group(1))
             pass
         else:
             if len(s1.group(2)) > 3:
